@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Party",
+    "venue": "This Place",
+    "venue_description": "This Place is great",
+    "venue_img": "/img/venues/nss.png",
+    "venue_url": "http://venuedomain.com/",
+    "parking_instructions": "",
+    "event_description": "event description",
+    "schedule": [
+      "Sunday Night 6-9pm"
+    ],
+    "eventbrite_url": "https://opentechsummit2018.eventbrite.com"
+  }
+]

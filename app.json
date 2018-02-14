@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "OPEN Tech and Organising Summit 2018",
+    "description":
+      "Official app for the OPEN Tech and Organising Summit 2018, Apr 23-27 in Cluj, Romania.",
+    "slug": "open-tech-summit-app",
+    "privacy": "unlisted",
+    "version": "1.0.4",
+    "primaryColor": "#1dafec",
+    "icon": "./src/assets/icon-ios.png",
+    "orientation": "portrait",
+    "sdkVersion": "23.0.0",
+    "splash": {
+      "backgroundColor": "#1dafec",
+      "resizeMode": "cover",
+      "image": "./src/assets/splash-cover.png"
+    },
+    "android": {
+      "package": "org.open.opentechsummit.app",
+      "icon": "./src/assets/icon-android.png",
+      "versionCode": 1,
+      "permissions": []
+    },
+    "ios": {
+      "bundleIdentifier": "org.open.opentechsummit.app",
+      "icon": "./src/assets/icon-ios.png",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true,
+      "loadJSInBackgroundExperimental": true,
+      "splash": {
+        "image": "./src/assets/splash-icon.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#1dafec"
+      }
+    }
+  }
+}

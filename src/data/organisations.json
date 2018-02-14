@@ -1,0 +1,122 @@
+[
+  {
+    "company": "MoveOn",
+    "twitter": "twitter",
+    "logo": "move-on.png",
+    "url": "http://moveon.org",
+    "description": "United States",
+    "level": "Full Member"
+  },
+  {
+    "company": "GetUp",
+    "twitter": "twitter",
+    "logo": "get-up.png",
+    "url": "http://getup.org.au",
+    "description": "Australia",
+    "level": "Full Member"
+  },
+  {
+    "company": "Campact",
+    "twitter": "twitter",
+    "logo": "campact.jpg",
+    "url": "http://campact.de",
+    "description": "Germany",
+    "level": "Full Member"
+  },
+  {
+    "company": "38 Degrees",
+    "twitter": "twitter",
+    "logo": "38-degrees.png",
+    "url": "http://38degrees.org.uk",
+    "description": "United Kingdom",
+    "level": "Full Member"
+  },
+  {
+    "company": "Lead Now",
+    "twitter": "twitter",
+    "logo": "lead-now.png",
+    "url": "http://leadnow.ca",
+    "description": "Canada",
+    "level": "Full Member"
+  },
+  {
+    "company": "Skiftet",
+    "twitter": "twitter",
+    "logo": "skiftet.png",
+    "url": "http://skiftet.org",
+    "description": "Sweden",
+    "level": "Full Member"
+  },
+  {
+    "company": "Action Station",
+    "twitter": "twitter",
+    "logo": "action-station.png",
+    "url": "http://actionstation.org.nz",
+    "description": "New Zealand",
+    "level": "Full Member"
+  },
+  {
+    "company": "Uplift",
+    "twitter": "twitter",
+    "logo": "uplift.png",
+    "url": "http://uplift.ie",
+    "description": "Ireland",
+    "level": "Full Member"
+  },
+  {
+    "company": "Akcja Demokracja",
+    "twitter": "twitter",
+    "logo": "akcjademokracja.png",
+    "url": "http://akcjademokracja.pl",
+    "description": "Poland",
+    "level": "Start Up"
+  },
+  {
+    "company": "Amandla",
+    "twitter": "twitter",
+    "logo": "amandla.png",
+    "url": "http://amandla.mobi",
+    "description": "South Africa",
+    "level": "Start Up"
+  },
+  {
+    "company": "Aufstehn",
+    "twitter": "twitter",
+    "logo": "aufstehn.png",
+    "url": "http://aufstehn.at",
+    "description": "Austria",
+    "level": "Start Up"
+  },
+  {
+    "company": "Campax",
+    "twitter": "twitter",
+    "logo": "campax.png",
+    "url": "http://www.campax.org",
+    "description": "Switzerland",
+    "level": "Start Up"
+  },
+  {
+    "company": "De Clic",
+    "twitter": "twitter",
+    "logo": "de-clic.png",
+    "url": "http://de-clic.ro",
+    "description": "Romania",
+    "level": "Start Up"
+  },
+  {
+    "company": "Zazim",
+    "twitter": "twitter",
+    "logo": "zazim.png",
+    "url": "http://zazim.org.il",
+    "description": "Israel",
+    "level": "Start Up"
+  },
+  {
+    "company": "Bulla",
+    "twitter": "twitter",
+    "logo": "bulla.png",
+    "url": "",
+    "description": "Columbia",
+    "level": "Start Up"
+  },
+]

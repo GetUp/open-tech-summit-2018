@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Ben Blerg",
+    "avatar": "https://secure.gravatar.com/avatar/bb5f9a486381430eafdf22f1e9457220?size=500",
+    "location": "Brisbane, AU",
+    "bio": "Ben is a blerg.",
+    "talk_format": "Talk (~30-45 minutes)",
+    "twitter": "yada",
+    "url": "http://www.yada.com/",
+    "organization": "GetUp",
+    "title": "Why choose React?",
+    "abstract": "an abstract on whats going on",
+    "description": "great desctiption",
+    "audience_level": "All",
+    "tags": ["javascript", "react"],
+    "state": "accepted",
+    "confirmed": false,
+    "created_at": "2018-01-21T05:32:15.829Z"
+  }
+]

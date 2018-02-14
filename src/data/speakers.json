@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Mandy Simmons",
+    "avatar":
+      "https://secure.gravatar.com/avatar/bb5f9a486381430eafdf22f1e9457220?size=500",
+    "location": "Sydney, AU",
+    "bio":
+      "Burke blerg does code",
+    "talk_format": "Talk (~30-45 minutes)",
+    "twitter": "blergenbam",
+    "organization": "nfp",
+    "shirt_size": "Men's M",
+    "title": "Talk title?",
+    "abstract":
+      "abstract",
+    "description":
+      "description",
+    "audience_level": "Intermediate",
+    "tags": ["tips and tricks", "visual studio code", "tools"],
+    "state": "accepted",
+    "confirmed": true  
+  }
+]

@@ -1,0 +1,127 @@
+[
+  {
+    "title": "Monday",
+    "date": "April 23, 2018",
+    "slots": [
+      {
+        "talk": false,
+        "party": true,
+        "keynote": false,
+        "time": "6:00 pm",
+        "title": "Cluj Kickoff Party",
+        "photo": "",
+        "room": "romania",
+        "summary": "party"
+      }
+    ]
+  },
+  {
+    "title": "Tuesday",
+    "date": "April 24, 2018",
+    "slots": [
+      {
+        "talk": false,
+        "keynote": false,
+        "room": "Belveder Hotel Banquet Hall",
+        "summary": "",
+        "time": "8:00 - 9:00 am",
+        "title": "Breakfast"
+      },
+      {
+        "talk": true,
+        "keynote": false,
+        "room": "romania somewhere",
+        "summary": "",
+        "time": "9:15 - 10:15 am",
+        "title": "This is a thing",
+        "speaker": "Mandy Simmons"
+      },
+      {
+        "talk": true,
+        "keynote": true,
+        "room": "romania somewhere",
+        "summary": "",
+        "time": "12:15 - 01:15 pm",
+        "title": "Keynote - react?",
+        "speaker": "Ben Blerg"
+      },
+      {
+        "talk": false,
+        "keynote": false,
+        "room": "Belveder Hotel Banquet Hall",
+        "summary": "",
+        "time": "1:30 - 2:15 pm",
+        "title": "Lunch"
+      },
+    ]
+  },
+  {
+    "title": "Wednesday",
+    "date": "November 25, 2018",
+    "slots": [
+      {
+        "talk": false,
+        "keynote": false,
+        "room": "Belveder Hotel Banquet Hall",
+        "summary": "",
+        "time": "8:00 - 9:00 am",
+        "title": "Breakfast"
+      },
+      {
+        "talk": true,
+        "keynote": true,
+        "room": "romania somewhere",
+        "summary": "",
+        "time": "9:15 - 10:15 am",
+        "title": "Keynote - this is a thing",
+        "speaker": "Mandy Simmons"
+      }
+    ]
+  },
+  {
+    "title": "Thursday",
+    "date": "November 26, 2018",
+    "slots": [
+      {
+        "talk": false,
+        "keynote": false,
+        "room": "Belveder Hotel Banquet Hall",
+        "summary": "",
+        "time": "8:00 - 9:00 am",
+        "title": "Breakfast"
+      },
+      {
+        "talk": true,
+        "keynote": true,
+        "room": "romania somewhere",
+        "summary": "",
+        "time": "9:15 - 10:15 am",
+        "title": "Keynote - this is a thing",
+        "speaker": "Mandy Simmons"
+      }
+    ]
+  },
+  {
+    "title": "Friday",
+    "date": "November 27, 2018",
+    "slots": [
+      {
+        "talk": false,
+        "keynote": false,
+        "room": "Belveder Hotel Banquet Hall",
+        "summary": "",
+        "time": "8:00 - 9:00 am",
+        "title": "Breakfast"
+      },
+      {
+        "talk": true,
+        "keynote": true,
+        "room": "romania somewhere",
+        "summary": "",
+        "time": "9:15 - 10:15 am",
+        "title": "Keynote - this is a thing",
+        "speaker": "Mandy Simmons"
+      }
+    ]
+  }
+]

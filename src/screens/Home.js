@@ -71,11 +71,11 @@ class Home extends React.Component {
             }}
           >
             <View style={styles.headerVideoLayer}>
-              <Image
+              {/*<Image
                 source={require('../assets/home.jpg')}
                 style={{ width: 1000, height: 200, resizeMode: 'contain' }}
                 tintColor="#fff"
-              />
+              />*/}
               {/*<VideoBackground />*/}
               <View style={styles.headerVideoOverlay} />
               <LinearGradient
@@ -112,22 +112,6 @@ class Home extends React.Component {
                   Cluj, Romania
                 </SemiBoldText>
               </HideWhenConferenceHasEnded>
-
-              {/*<HideWhenConferenceHasStarted>
-                <View style={{ paddingTop: 8, alignItems: 'center' }}>
-                  <ClipBorderRadius>
-                    <RectButton
-                      style={styles.buyButton}
-                      underlayColor={Colors.blue}
-                      onPress={this._openTickets}
-                    >
-                      <SemiBoldText style={styles.buyButtonText}>
-                        Secure a spot
-                      </SemiBoldText>
-                    </RectButton>
-                  </ClipBorderRadius>
-                </View>
-              </HideWhenConferenceHasStarted>*/}
             </View>
           </View>
 
@@ -142,12 +126,6 @@ class Home extends React.Component {
       </View>
     );
   }
-
-  _openTickets = () => {
-    Linking.openURL(
-      'https://www.eventbrite.com/e/opentechsummit2018'
-    );
-  };
 
 }
 
@@ -187,7 +165,7 @@ class DeferredHomeContent extends React.Component {
         <ClipBorderRadius>
           <RectButton
             style={styles.bigButton}
-            onPress={this._handlePressCOCButton}
+            onPress={this._handlePressAgendaButton}
             underlayColor="#fff"
           >
             <SemiBoldText style={styles.bigButtonText}>
@@ -241,15 +219,15 @@ class DeferredHomeContent extends React.Component {
     );
   };
 
-  _handlePressCOCButton = () => {
-    WebBrowser.openBrowserAsync('http://the-open.org/conduct');
+  _handlePressAgendaButton = () => {
+    WebBrowser.openBrowserAsync('https://www.the-open.net/home#collaborate');
   };
 
   _handlePressTwitterButton = async () => {
     try {
-      await Linking.openURL(`twitter://user?screen_name=opentechsummit2018`);
+      await Linking.openURL(`twitter://user?screen_name=GetUp`);
     } catch (e) {
-      WebBrowser.openBrowserAsync('https://twitter.com/opentechsummit2018');
+      WebBrowser.openBrowserAsync('https://twitter.com/GetUp');
     }
   };
 

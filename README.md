@@ -1,8 +1,6 @@
 # OpenTechSummit app
 
-- Download [OpenTechSummit on the Apple App Store](https://itunes.apple.com/us/app/opentechsummit/)
-- Download [OpenTechSummit on Google Play](https://play.google.com/store/apps/details?id=org.opentechsummit.app&hl=en)
-- Open OpenTechSummit [with the Expo client](https://expo.io/@opentechsummit/app)
+- Open OpenTechSummit [with the Expo client](https://expo.io/@benmort/open-tech-summit-app)
 
 ## Get it running on your machine (anybody)
 
@@ -27,3 +25,6 @@ First, sign in to the `opentech` Expo account.
 
 - Android: `exp build:android --release-channel android`
 - iOS: `exp build:android --release-channel ios`
+
+### Special Thanks to:
+[The Nodevember Open Source Project](https://github.com/nodevember/nodevember-2017-mobile)

@@ -6,8 +6,8 @@
 - Download [OpenTechSummit on Google Play](https://play.google.com/store/apps/opentechsummit)
 ## Get it running on your machine (anybody)
 
-- `yarn global add exp`
-- Clone this repo, cd into it, run `yarn`
+- `npm i -g expo`
+- Clone this repo, cd into it, run `npm i`
 - `exp start`
 - Scan the QR code from your phone. Alternatively, in another terminal window run `exp ios` and/or `exp android` to open in simulator.
 

@@ -28,5 +28,5 @@ First, sign in to the `opentech` Expo account.
 - Android: `exp build:android --release-channel android`
 - iOS: `exp build:android --release-channel ios`
 
-### Special Thanks to:
+## Special Thanks To
 [The Nodevember Open Source Project](https://github.com/nodevember/nodevember-2017-mobile)

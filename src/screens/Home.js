@@ -168,6 +168,16 @@ class DeferredHomeContent extends React.Component {
             onPress={this._handlePressAgendaButton}
             underlayColor="#fff"
           >
+            <Ionicons
+              name="md-chatbubbles"
+              size={23}
+              style={{
+                color: '#fff',
+                marginTop: 3,
+                backgroundColor: 'transparent',
+                marginRight: 5,
+              }}
+            />
             <SemiBoldText style={styles.bigButtonText}>
               Read The Summit Agenda
             </SemiBoldText>
@@ -180,8 +190,40 @@ class DeferredHomeContent extends React.Component {
             onPress={this._handlePressMapButton}
             underlayColor="#fff"
           >
+            <Ionicons
+              name="md-map"
+              size={23}
+              style={{
+                color: '#fff',
+                marginTop: 3,
+                backgroundColor: 'transparent',
+                marginRight: 5,
+              }}
+            />
             <SemiBoldText style={styles.bigButtonText}>
               {Platform.OS === 'android' ? 'Download' : 'Open'} The Summit Map
+            </SemiBoldText>
+          </RectButton>
+        </ClipBorderRadius>
+
+        <ClipBorderRadius>
+          <RectButton
+            style={styles.bigButton}
+            onPress={this._handlePressRepoButton}
+            underlayColor="#fff"
+          >
+            <Ionicons
+              name="logo-github"
+              size={23}
+              style={{
+                color: '#fff',
+                marginTop: 3,
+                backgroundColor: 'transparent',
+                marginRight: 5,
+              }}
+            />
+            <SemiBoldText style={styles.bigButtonText}>
+              This is Open Source
             </SemiBoldText>
           </RectButton>
         </ClipBorderRadius>
@@ -221,6 +263,10 @@ class DeferredHomeContent extends React.Component {
 
   _handlePressAgendaButton = () => {
     WebBrowser.openBrowserAsync('https://www.the-open.net/home#collaborate');
+  };
+
+  _handlePressRepoButton = () => {
+    WebBrowser.openBrowserAsync('https://github.com/GetUp/open-tech-summit-2018');
   };
 
   _handlePressTwitterButton = async () => {

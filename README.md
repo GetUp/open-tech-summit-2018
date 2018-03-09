@@ -1,7 +1,9 @@
 # OpenTechSummit app
 
 - Open OpenTechSummit [with the Expo client](https://expo.io/@benmort/open-tech-summit-app)
-
+###### (Coming Soon)
+- Download [OpenTechSummit on the Apple App Store](https://itunes.apple.com/us/app/opentechsummit/)
+- Download [OpenTechSummit on Google Play](https://play.google.com/store/apps/opentechsummit)
 ## Get it running on your machine (anybody)
 
 - `yarn global add exp`

@@ -2,7 +2,7 @@ import React from 'react';
 import { Asset, AppLoading, Font, Constants } from 'expo';
 import { Platform, View, StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { loadSavedTalksAsync } from './src/utils/storage';
+import { loadSavedTalksAsync, loadAuthenticationAsync } from './src/utils/storage';
 
 import Navigation from './src/Navigation';
 import Home from './src/screens/Home';

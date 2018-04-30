@@ -124,7 +124,12 @@ const OrganisationNavigation = StackNavigator(
 );
 
 const DrawerRouteConfig = {
-  Home: { screen: Screens.Home },
+  Home: {
+    screen: Screens.Home,
+    navigationOptions: ({ navigation }) => {
+      header: 'none'
+    }
+  },
   Schedule: { screen: ScheduleNavigation },
   Speakers: { screen: SpeakersNavigation },
   Crew: { screen: CrewNavigation },

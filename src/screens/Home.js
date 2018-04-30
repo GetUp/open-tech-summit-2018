@@ -9,8 +9,12 @@ import {
   ScrollView,
   StyleSheet,
   View,
+  StatusBar,
+  Alert,
+  Button
 } from 'react-native';
-import { Asset, LinearGradient, WebBrowser, Video } from 'expo';
+
+import { Asset, LinearGradient, WebBrowser, Video, AuthSession} from 'expo';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import { NavigationActions } from 'react-navigation';
 import FadeIn from 'react-native-fade-in-image';
@@ -32,14 +36,53 @@ import {
   HideWhenConferenceHasEnded,
   ShowWhenConferenceHasEnded,
 } from '../utils';
+import { toggleAuthenticated, loadAuthenticationAsync, withAuthedState } from '../utils/storage';
 
+@withAuthedState
 class Home extends React.Component {
   state = {
     scrollY: new Animated.Value(0),
   };
 
+  async componentDidMount() {
+    const authed = await loadAuthenticationAsync()
+    this.setState({authed: authed})
+    const { navigation } = this.props
+    navigation.setParams({isHeaderShow: authed})
+  }
+
+  loginWithAuth0 = async () => {
+    const redirectUrl = AuthSession.getRedirectUrl();
+    console.log(`Redirect URL (add this to Auth0): ${redirectUrl}`);
+    const result = await AuthSession.startAsync({
+      authUrl: `${auth0Domain}/authorize` + toQueryString({
+        client_id: auth0ClientId,
+        response_type: 'token',
+        scope: 'openid name',
+        redirect_uri: redirectUrl,
+      }),
+    });
+
+    console.log(result);
+    if (result.type === 'success') {
+      this.handleParams(result.params);
+    }
+  }
+
+  handleParams = (responseObj) => {
+    const { navigation } = this.props
+    if (responseObj.error) {
+      Alert.alert('Error', responseObj.error_description
+        || 'something went wrong while logging in');
+      return;
+    }
+    toggleAuthenticated()
+    this.setState({authed: true})
+    navigation.setParams({isHeaderShow: authed})
+  }
+
   render() {
-    const { scrollY } = this.state;
+    const { scrollY, authed } = this.state;
     const headerOpacity = scrollY.interpolate({
       inputRange: [0, 150],
       outputRange: [0, 1],
@@ -114,8 +157,12 @@ class Home extends React.Component {
               </HideWhenConferenceHasEnded>
             </View>
           </View>
-
-          <DeferredHomeContent />
+          { authed &&
+            <DeferredHomeContent />
+          }
+          { !authed &&
+            <DeferredLoginContent loginWithAuth0={this.loginWithAuth0.bind(this)} />
+          }
           <OverscrollView />
         </AnimatedScrollView>
 
@@ -287,6 +334,75 @@ class DeferredHomeContent extends React.Component {
   };
 }
 
+const auth0ClientId = 'RLh0VMRszt3MeT0B36SK2ZL6BA4T1ckM';
+const auth0Domain = 'https://getup.auth0.com';
+
+  /**
+   * Converts an object to a query string.
+   */
+function toQueryString(params) {
+  return '?' + Object.entries(params)
+    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+    .join('&');
+}
+
+class DeferredLoginContent extends React.Component {
+  state = {
+    username: undefined,
+  };
+
+  render() {
+    const { loginWithAuth0 } = this.props
+    return (
+      <View style={styles.container}>
+        {this.state.username !== undefined ?
+          <Text style={styles.title}>Hi {this.state.username}!</Text> :
+          <View>
+            <View
+              style={{
+                padding: 10,
+                paddingTop: Layout.headerHeight - 10,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <View>
+                <SemiBoldText>
+                  Thank you for joining us!
+                </SemiBoldText>
+                <BoldText>
+                  Please Login to Continue!
+                </BoldText>
+              </View>
+            </View>
+            <ClipBorderRadius>
+              <RectButton
+                style={styles.bigButton}
+                onPress={() => loginWithAuth0()}
+                underlayColor="#fff"
+              >
+                <Ionicons
+                  name="md-unlock"
+                  size={23}
+                  style={{
+                    color: '#fff',
+                    marginTop: 3,
+                    backgroundColor: 'transparent',
+                    marginRight: 5,
+                  }}
+                />
+                <SemiBoldText style={styles.bigButtonText}>
+                  LOGIN
+                </SemiBoldText>
+              </RectButton>
+            </ClipBorderRadius>
+          </View>
+        }
+      </View>
+    );
+  }
+}
+
 const OverscrollView = () => (
   <View
     style={{
@@ -365,6 +481,17 @@ const styles = StyleSheet.create({
   seeAllTalks: {
     fontSize: FontSizes.normalButton,
     color: Colors.blue,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 20,
+    textAlign: 'center',
+    marginTop: 40,
   },
 });
 

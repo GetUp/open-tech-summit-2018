@@ -5,7 +5,30 @@ import _ from 'lodash';
 
 const _emitter = new EventEmitter();
 const _savedTalksStorageKey = '@OpenTechSummit:savedTalks';
+const _savedAuthStorageKey = '@OpenTechSummit:authentication';
 let _savedTalks;
+let _authenticated;
+
+export const loadAuthenticationAsync = async () => {
+  try {
+    let result = await AsyncStorage.getItem(_savedAuthStorageKey);
+    if (result) {
+      _authenticated = JSON.parse(result);
+    }
+  } catch (e) {
+    console.warn(e);
+    _authenticated = false;
+  } finally {
+    if (!_authenticated) {
+      _authenticated = false;
+    }
+  }
+  return _authenticated
+};
+
+export const removeAuthenticationAsync = async () => {
+  await AsyncStorage.removeItem(_savedAuthStorageKey);
+};
 
 export const loadSavedTalksAsync = async () => {
   try {
@@ -21,6 +44,10 @@ export const loadSavedTalksAsync = async () => {
     }
   }
 };
+
+export function getSavedStateForAuth() {
+  return _authenticated;
+}
 
 export function getSavedStateForTalk(talk) {
   const talkKey = _.snakeCase(talk.title);
@@ -50,12 +77,29 @@ export const toggleSaved = talk => {
 function _updateSavedTalks(savedTalks) {
   _savedTalks = savedTalks;
   _emitter.emit('change');
-  _updateAsyncStorage();
+  _updateSavedTalksAsyncStorage();
 }
 
-function _updateAsyncStorage() {
+export const toggleAuthenticated = () => {
+  _updateAuthentication();
+};
+
+function _updateAuthentication() {
+  _emitter.emit('change');
+  _updateAuthenticationAsyncStorage();
+}
+
+function _updateSavedTalksAsyncStorage() {
   try {
     AsyncStorage.setItem(_savedTalksStorageKey, JSON.stringify(_savedTalks));
+  } catch (e) {
+    console.warn(e);
+  }
+}
+
+function _updateAuthenticationAsyncStorage() {
+  try {
+    AsyncStorage.setItem(_savedAuthStorageKey, JSON.stringify(_authenticated || true));
   } catch (e) {
     console.warn(e);
   }
@@ -64,7 +108,7 @@ function _updateAsyncStorage() {
 export function withSaveState(WrappedComponent) {
   class ComponentWithSaveState extends React.Component {
     state = {
-      saved: getSavedStateForTalk(this.props.talk),
+      saved: getSavedStateForTalk(this.props.talk)
     };
 
     componentWillMount() {
@@ -85,4 +129,18 @@ export function withSaveState(WrappedComponent) {
   }
 
   return ComponentWithSaveState;
+}
+
+export function withAuthedState(WrappedComponent) {
+  class ComponentWithAuthedState extends React.Component {
+    state = {
+      authed: getSavedStateForAuth()
+    };
+
+    render() {
+      return <WrappedComponent authed={this.state.authed} {...this.props} />;
+    }
+  }
+
+  return ComponentWithAuthedState;
 }
